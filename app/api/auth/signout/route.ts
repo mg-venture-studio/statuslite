@@ -1,0 +1,16 @@
+import { createClient } from '@supabase/supabase-js';
+import { NextResponse } from 'next/server';
+
+export async function POST() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.redirect(new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'), { status: 303 });
+}
