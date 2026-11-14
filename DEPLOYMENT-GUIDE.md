@@ -1,12 +1,14 @@
 # StatusLite Deployment Guide
 
-## Current Status (2026-11-04)
+## Current Status (2026-11-14)
 
 ✅ **Completed:**
-- Build verified locally — all routes compile successfully
+- Build verified locally — all routes compile successfully (Next.js 16.4.5, Turbopack)
 - Code pushed to GitHub: https://github.com/mg-venture-studio/statuslite
 - Supabase schema ready: `supabase/schema.sql`
 - SEO blog content complete (5 posts, see MGV-137)
+- Cloudflare deployment config removed — project now configured for Vercel
+- All 21 routes compile and generate correctly
 
 ⚠️ **Blocked — Missing Credentials:**
 Deployment requires external account connections that need board decision or credential provision.
